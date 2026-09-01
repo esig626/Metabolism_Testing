@@ -2,7 +2,7 @@
 
 **Can network-coupled isotope observations distinguish metabolic states or metabolic classes reliably even when the underlying flux state cannot be uniquely estimated?**
 
-This repository develops that question from literature review to mathematical formulation and executable simulation. It combines a reproducible methodological audit of stable-isotope metabolic tracing, explicit definitions of the observable data and uncertainty structure, statistical decision problems, and a scoped simulation framework for studying mass-isotopologue distributions (MIDs) under controlled metabolic variation.
+This repository develops that question from literature review to mathematical formulation and executable simulation. It combines a reproducible methodological audit of stable-isotope metabolic tracing, explicit definitions of the observable data and uncertainty structure, statistical decision problems, and a scoped simulation framework for studying mass-isotopologue distributions (MIDs) under controlled metabolic variation (https://arxiv.org/abs/2608.28068).
 
 ## From flux states to observable isotope distributions
 
