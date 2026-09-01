@@ -1,0 +1,91 @@
+# Source Information Gaps for Future Statistical Modelling
+
+## Scope
+
+This register records information that remains unresolved after reading the two
+supplied manuscripts in full. `MYE` denotes
+`sources/pdfs/myeloma_pyruvate_2024.pdf`; `CHR` denotes
+`sources/pdfs/sdhb_chromaffin_2025.pdf`. Citations use PDF page numbers. The
+source-grounded protocols are in
+[`protocol_instantiations/myeloma.md`](protocol_instantiations/myeloma.md) and
+[`protocol_instantiations/chromaffin.md`](protocol_instantiations/chromaffin.md).
+
+An unreported field is not evidence that a procedure did not occur. It marks a
+parameter, index, or observation that cannot yet be instantiated from the supplied
+manuscript. No independence is inferred from a reported repeat, a named clone, a
+separate fraction, or a mean curve.
+
+## Unresolved design, lineage, and sampling information
+
+| Required item | Myeloma status | Chromaffin status | Why it matters mathematically |
+|---|---|---|---|
+| Primary sampling unit: separate wells, days, or batches | **UNKNOWN — NOT REPORTED.** Figure 1 says experiments were repeated three times but does not identify wells, days, or batches. `[MYE p. 11, Figure 1]` | **UNKNOWN — NOT REPORTED.** No biological `n`, well/day map, or batch map is given. `[CHR pp. 3–5, §§2.1–2.7; p. 20, Figure 8]` | The unit fixes the denominator degrees of freedom and the factorisation of the likelihood. Without it, an effective biological sample size cannot be calculated. |
+| Statistical independence of cultures | **UNKNOWN — NOT REPORTED.** Separate initiation or the word “repeated” is not tied to shared stocks, reagents, or days. `[MYE pp. 3–5; p. 11]` | **UNKNOWN — NOT REPORTED.** CL6/CL8 and wells are not given a sampling or shared-batch model. `[CHR pp. 3–4]` | Independence determines whether product-law testing, standard errors, and concentration bounds apply. Shared effects produce clustered rather than IID observations. |
+| Randomisation of conditions/tracers to cultures or positions, and randomisation of preparation/acquisition sample order | **UNKNOWN — NOT REPORTED.** `[MYE pp. 3–8, methods]` | **UNKNOWN — NOT REPORTED.** `[CHR pp. 3–5, methods]` | Without randomisation or a defensible exchangeability condition, treatment effects may be aliased with plate position, preparation sequence, acquisition time, operator, or source state. |
+| Instrument sample order and run order | **UNKNOWN — NOT REPORTED.** LC-QTOF blanks and calibration are described, but sample ordering is not. `[MYE p. 6]` | **UNKNOWN — NOT REPORTED.** `[CHR p. 4, §§2.5–2.6]` | Order is needed to model drift, carryover, temporal correlation, and confounding of class with instrument state. |
+| Stage-specific batch structure | **UNKNOWN — NOT REPORTED** for culture, medium/tracer preparation, harvest, extraction, derivatisation, GC-MS/LC-MS acquisition, and processing. “Sample batch” appears only for LC-QTOF calibration. `[MYE pp. 3–8]` | **UNKNOWN — NOT REPORTED** for culture, tracer, harvest, extraction, derivatisation, acquisition, and processing batches. `[CHR pp. 3–5]` | Each batch can induce a shared random or systematic effect. Collapsing stages into one batch term gives the wrong covariance; one batch per class makes effects non-identifiable. |
+| Preparation-batch allocation | **UNKNOWN — NOT REPORTED.** `[MYE pp. 5–8]` | **UNKNOWN — NOT REPORTED.** `[CHR p. 4, §§2.4–2.6]` | Preparation-level clustering determines whether recovery/derivatisation variation can be separated from culture and injection variation. |
+| Repeated injections | **UNKNOWN — NOT REPORTED** for GC-MS, LC-MS, and LC-QTOF. `[MYE pp. 6–8]` | **UNKNOWN — NOT REPORTED.** `[CHR p. 4, §2.5]` | Repeat injections estimate acquisition repeatability conditional on one preparation; they cannot estimate biological variance. Their absence blocks injection-variance estimation. |
+| Extraction or derivatisation replicates | **UNKNOWN — NOT REPORTED.** `[MYE pp. 5–7]` | **UNKNOWN — NOT REPORTED.** `[CHR p. 4, §§2.4–2.5]` | Split preparation is needed to identify preparation variance separately from culture and instrument variance. |
+| Pooling, splitting, and aliquot ancestry | The HS-5, JJN-3, and medium fractions share a culture, but pooling across wells and assay-specific splitting are **UNKNOWN — NOT REPORTED**. `[MYE pp. 3 and 5–7]` | Medium and cell fractions share a well, but pooling across wells and splits into protein, extracellular, and tracing assays are **UNKNOWN — NOT REPORTED**. `[CHR pp. 3–4]` | Pooling changes the observational unit and erases among-culture variance; splitting creates paired observations and must be represented in the covariance graph. |
+| Clone/donor-to-observation mapping | Patient records and cell identities are reported, but assay-specific donor inclusion and clone/passages are **UNKNOWN — NOT REPORTED**. `[MYE pp. 3–4, 12, and 31]` | CL6 and CL8 are named, but their separate use, aggregation, and WT counterpart mapping are **UNKNOWN — NOT REPORTED**. `[CHR p. 3, §2.1]` | A class effect cannot be separated from a clone/donor effect when identity and class are aliased. The mapping sets the population to which inference can generalise. |
+| Target population of inference | **UNKNOWN — NOT REPORTED** as a statistical population: one pair of cell lines, patients, or a broader myeloma population. `[MYE pp. 3–4]` | **UNKNOWN — NOT REPORTED** as a statistical population beyond the imCC lines and named clones. `[CHR p. 3]` | The target population determines which variation is biological replication and whether clone-, donor-, or genotype-population claims are supported. |
+
+## Unresolved variance and dependence information
+
+| Required variance/dependence component | Status in both studies | Why it matters mathematically |
+|---|---|---|
+| Raw-ion or scan variance | **UNKNOWN — NOT REPORTED.** MYE describes raw formats and processing but no count model; CHR refers to supplementary raw ion counts not present in the supplied PDF. `[MYE pp. 6–8; CHR p. 19, §4.2]` | A Poisson, overdispersed-count, or intensity-error law yields different MID covariance and depth requirements. Ion count is measurement depth, not biological `n`. |
+| Injection-level variance | **UNKNOWN — NOT REPORTED.** `[MYE pp. 6–8; CHR p. 4]` | It is required to decide whether additional injections reduce decision error and to avoid assigning injection noise to culture heterogeneity. |
+| Extraction/derivatisation variance | **UNKNOWN — NOT REPORTED.** `[MYE pp. 5–8; CHR p. 4]` | It controls dependence among metabolites processed together and whether preparation effects can mimic a class-wide MID shift. |
+| Culture-level variance | **UNKNOWN — NOT REPORTED.** A three-repeat statement in MYE has no unit definition; CHR gives no `n`. `[MYE p. 11; CHR pp. 15–20]` | Culture variance is the principal component for culture-level sample-size calculations and fixed-sample risk. It cannot be estimated from fragments or ions. |
+| Batch-level variance | **UNKNOWN — NOT REPORTED.** `[MYE pp. 3–8; CHR pp. 3–5]` | Across-batch generalisation and class–batch confounding cannot be assessed without replicated, crossed batches. |
+| Cross-fragment and cross-metabolite covariance | **UNKNOWN — NOT REPORTED.** `[MYE pp. 7–11; CHR pp. 16–20]` | Fragments share biology, extraction, acquisition, correction, and network constraints. Treating them independently overstates joint evidence and invalidates localisation error control. |
+| Within-MID dependence after correction and closure | Correction and exact MID normalisation are **UNKNOWN — NOT REPORTED** in both studies. `[MYE pp. 6–8; CHR pp. 4–5]` | Unit-sum closure produces singular compositional covariance; correction mixes components. A diagonal error law is generally unjustified. |
+| Dependence among HS-5, JJN-3, and medium | Their common-well ancestry is reported, but the quantitative joint law is **UNKNOWN — NOT REPORTED**. `[MYE pp. 3 and 5]` | These fractions are paired descendants, so their joint covariance can add information but their count cannot be used as three independent cultures. |
+| Dependence between chromaffin medium and cell extract | Common-well ancestry is supported; quantitative covariance is **UNKNOWN — NOT REPORTED**. `[CHR p. 4, §§2.3–2.4]` | The two fractions share the culture state and exposure. Modelling them as independent duplicates biological information and misstates uncertainty. |
+
+## Unresolved observation and processing information
+
+| Required item | Myeloma status | Chromaffin status | Why it matters mathematically |
+|---|---|---|---|
+| Exact natural-abundance correction | **UNKNOWN — NOT REPORTED.** Reference-mass correction is not isotope-abundance correction. `[MYE pp. 6–8]` | **UNKNOWN — NOT REPORTED.** `[CHR pp. 4–5]` | The correction operator mixes isotopologue areas, affects bias and covariance, and can change the apparent separation of class families. |
+| Tracer enrichment/purity and impurity correction | Nominal ^13C6/^13C5 identities and concentrations are reported; enrichment/purity and correction are **UNKNOWN — NOT REPORTED**. `[MYE p. 5]` | Same. `[CHR p. 4, §2.4]` | Uncertain input labelling changes the forward map and may be shared nuisance across all cultures using one tracer stock. |
+| Fragment identities and atom maps | **UNKNOWN — NOT REPORTED** for the GC-MS/MFA inputs. `[MYE pp. 7–8]` | **UNKNOWN — NOT REPORTED.** `[CHR pp. 4–5 and 16–20]` | Fragment atom composition defines the dimension and EMU/forward operator. Without it, predicted MIDs and structural discrimination cannot be instantiated. |
+| Complete measured panel and isotopologue ranges | Selected metabolites are named; the complete fragment/MID panel is **UNKNOWN — NOT REPORTED**. `[MYE pp. 9–19]` | Lactate, citrate, succinate, malate, fumarate, aspartate, and enrichment curves are named; an exhaustive panel is **UNKNOWN — NOT REPORTED**. `[CHR pp. 16–21]` | The observation space, multiple-testing family, missing-coordinate mask, and joint separation all depend on the declared panel. |
+| Raw ion-count availability | **UNKNOWN — NOT REPORTED**; model/scripts availability does not establish raw analytical data availability. `[MYE p. 21, “Data Availability”]` | The paper points to Supplementary Data for raw ion counts, but those files are absent from the supplied source; availability and provenance are **UNKNOWN — NOT REPORTED IN THE SUPPLIED SOURCE**. `[CHR p. 19, §4.2]` | Raw counts or intensities are needed to model measurement depth, saturation, heteroscedasticity, and propagation into peak areas and MIDs. |
+| Archived uncorrected peak areas and manual-edit provenance | Manual review is reported for MYE LC-QTOF, but edit logs and uncorrected vectors are **UNKNOWN — NOT REPORTED**. `[MYE p. 7]` | Peak integration/manual-edit details and archives are **UNKNOWN — NOT REPORTED**. `[CHR p. 4, §2.6]` | Without pre-correction intermediates, processing uncertainty and alternative correction analyses cannot be separated from biological differences. |
+| Censoring and missing-isotopologue rules | **UNKNOWN — NOT REPORTED.** `[MYE pp. 6–8]` | **UNKNOWN — NOT REPORTED.** `[CHR pp. 4–5]` | Thresholding changes the likelihood and normalisation denominator; informative missingness can bias the observed MID and invalidate complete-case guarantees. |
+| Replicate-level rather than summary MID availability | **UNKNOWN — NOT REPORTED.** Figures show summaries and selected isotope values. `[MYE pp. 9–19 and 33–37]` | **UNKNOWN — NOT REPORTED** in the supplied PDF; Figure 8 reports a mean curve. `[CHR pp. 17–20]` | Replicate-level vectors are required to estimate culture covariance, retain pairing, fit hierarchical laws, and avoid treating a mean as an observation with known error. |
+| Exact internal-standard normalisation operator | Explicit for MYE LC-QTOF peak areas, but exact zero/missing rules and applicability to GC-MS/LC-MS are **UNKNOWN — NOT REPORTED**. `[MYE pp. 5–8]` | Metabolite total ion counts are normalised to D6-glutaric acid, but MID-level use is **UNKNOWN — NOT REPORTED**. `[CHR p. 4, §§2.4–2.5]` | Scaling abundance by an internal standard is not MID closure. Conflating them changes the response space and covariance. |
+| Exact cell-count normalisation operator | Explicit for MYE LC-QTOF peak areas; applicability to every GC-MS/LC-MS output is **UNKNOWN — NOT REPORTED**. `[MYE pp. 7–8]` | Cell counting and extracellular rate calculations are reported, but GC-MS abundance/MID cell-count normalisation is **UNKNOWN — NOT REPORTED**. `[CHR pp. 3–4 and 16]` | An uncertain denominator creates ratio error shared across all metabolites from a culture and can induce class-dependent bias when growth differs. |
+| Software versions and processing parameters | Some software/version information is reported; in-house script versions, full parameters, and immutable processing identifiers are **UNKNOWN — NOT REPORTED**. `[MYE pp. 7–8 and 21]` | MassHunter version, `.CDF` conversion procedure, MATLAB script version, and integration parameters are **UNKNOWN — NOT REPORTED**. `[CHR p. 4, §2.6]` | Version/parameter changes define a different observation map; without provenance, processing effects cannot be modelled or reproduced. |
+| QC acceptance/exclusion criteria | Procedures are named, but thresholds, failure actions, and excluded samples are **UNKNOWN — NOT REPORTED**. `[MYE pp. 3 and 6–8]` | Instrument QC thresholds, blanks, drift/carryover rules, and exclusions are **UNKNOWN — NOT REPORTED**. `[CHR p. 4]` | A QC-gated law requires an observable prospective gate. Post hoc or unknown exclusions create selection bias and leave the corruption family undefined. |
+
+## Unresolved dynamic and forward-model information
+
+| Required item | Myeloma status | Chromaffin status | Why it matters mathematically |
+|---|---|---|---|
+| Steady-state verification criterion | The manuscript states isotopic steady state was verified but reports no time course, threshold, metabolite set, or numerical criterion. **UNKNOWN — NOT REPORTED.** `[MYE p. 8]` | INCA capability is stated, but the selected stationary/non-stationary mode and criterion are **UNKNOWN — NOT REPORTED**. `[CHR p. 5, §2.7]` | Steady-state versus dynamic MFA uses a different forward operator and parameter set. An unsupported stationary assumption creates structural model discrepancy. |
+| Time-course sampling schedule | A 48 h endpoint is reported; intermediate samples used to establish steady state are **UNKNOWN — NOT REPORTED**. `[MYE pp. 5 and 8]` | A 48 h endpoint and “over time” enrichment curves are reported, but their sampling times and unit ancestry are **UNKNOWN — NOT REPORTED**. `[CHR p. 4; pp. 19–20]` | Time points may be repeated measures or destructive samples. Their schedule and ancestry determine temporal dependence and kinetic identifiability. |
+| Exact MFA network, compartments, and atom-routing map | Recon3D-derived linked CBMs and INCA are named, but the exact MFA input network/map for these measurements is **UNKNOWN — NOT REPORTED**. `[MYE p. 8]` | The central-carbon flux maps and INCA are reported, but the exact MFA network/map is **UNKNOWN — NOT REPORTED**. `[CHR pp. 5 and 17–18]` | These objects define the nonlinear image of latent fluxes in MID-law space and therefore determine class overlap, identifiability, and model discrepancy. |
+| Observation-error law and weighting | Chi-square fit/intervals are reported, but the measurement covariance, weights, and replicate mapping are **UNKNOWN — NOT REPORTED**. `[MYE p. 8]` | SSR, intervals, and identifiability are reported, but the error law/weights are **UNKNOWN — NOT REPORTED**. `[CHR p. 17]` | Detector calibration, parameter intervals, goodness-of-fit, and finite-sample guarantees depend on the assumed error distribution and covariance. |
+| Experimental/model separation | The manuscript reports downstream flux maps and simulations; the exact record linking each fitted value back to culture-level MIDs is **UNKNOWN — NOT REPORTED**. `[MYE pp. 8–11]` | The manuscript reports downstream flux maps and kinetic-model fits; the exact record linking each fitted value back to culture-level MIDs is **UNKNOWN — NOT REPORTED**. `[CHR pp. 15–20]` | Treating fitted fluxes as primary observations double-uses model assumptions and conceals many-to-one mappings or residual structure. |
+
+## Inputs still needed for design or guarantee calculations
+
+| Required item | Status | Why it matters mathematically |
+|---|---|---|
+| Scientifically relevant decision margin | **UNKNOWN — NOT REPORTED** for both studies. `[MYE pp. 3–21; CHR pp. 3–32]` | Sample-size sufficiency is undefined without the smallest departure that must be detected. |
+| Type-I/Type-II, localisation, attribution, or abstention loss | **UNKNOWN — NOT REPORTED** for both studies. `[MYE pp. 3–21; CHR pp. 3–32]` | Different decisions require different risks; empirical ranking cannot be promoted to a fixed-sample guarantee without a target error criterion. |
+| Costs of cultures, batches, preparations, injections, and depth | **UNKNOWN — NOT REPORTED** for both studies. `[MYE pp. 3–21; CHR pp. 3–32]` | Allocation optimisation needs nonexchangeable costs; otherwise no cost-minimising design is defined. |
+| Failure, attrition, and missingness rates | **UNKNOWN — NOT REPORTED** for both studies. `[MYE pp. 3–21; CHR pp. 3–32]` | Planned allocation differs from realised sample size. Attrition must enter risk and budget calculations rather than being ignored. |
+| Permitted nuisance ranges and shared versus condition-specific parameters | **UNKNOWN — NOT REPORTED** for both studies. `[MYE pp. 3–21; CHR pp. 3–32]` | The nuisance family determines class separation. Freeing a truly shared parameter or leaving a discrepancy unbounded can erase identifiability or make uniform risk undefined. |
+
+## Consequences for current use
+
+The manuscripts identify culture-level physical branches and many fixed protocol
+settings, but they do not provide a defensible independent-culture sample size.
+Consequently, synthetic-data proofs of concept may declare assumed variance,
+dependence, missingness, and batch structures, but no such calculation can yet be
+reported as an empirical sample-size requirement or guarantee for either study.
