@@ -207,4 +207,3 @@ def test_library_generated_tca_maps_reproduce_the_frozen_glutamate_mid() -> None
     result = benchmark.run_batch_forward(bundle, benchmark._fixed_flux_frame(model), benchmark.load_experiment(benchmark.STATIONARY_EXPERIMENT))
     observed = np.asarray(result.predictions["figure12"]["glutamate"], dtype=float)
     assert np.allclose(observed, benchmark.PUBLISHED_TABLE6_MID, rtol=0.0, atol=5.1e-5)
-

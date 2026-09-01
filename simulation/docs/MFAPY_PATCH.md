@@ -12,8 +12,8 @@ nlopt-backed fitting routines.
 
 Source-repository commit eef8dfb06c6cf9f67c5db06eb637f5684758ac4f
 made that import optional and added a guard to fit_r_mdv_nlopt. The pre-patch
-blob was 6f81091f4f1d10fd2dc8b3049249fcf2e11c6628 and the post-patch blob was
-b48359a67b5a8052101c65c61b2c96fa203f8484. The exact historical diff is
+blob was 6f81091f302b0ad190a6dc4a9601b345177e3572 and the post-patch blob was
+b48359a8f6f9c562f03e97d6d6071eabde783837. The exact historical diff is
 preserved at
 [provenance/patches/mfapy_optional_nlopt.patch](../provenance/patches/mfapy_optional_nlopt.patch).
 
