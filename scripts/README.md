@@ -2,6 +2,6 @@
 
 This directory contains the preserved Perl utilities used for corpus migration, search screening, deduplication, closure, validation, and audit checks.
 
-The scripts were moved here without source edits. They were not rerun during this structural cleanup. Some may retain historical assumptions about invocation from the repository root or about paths used before the reorganisation, so those assumptions should be checked before the scripts are reused.
+The scripts were moved from the repository root without source edits. Their existing relative references to `audit/...`, `corpus/...`, and `scripts/...` were used to recover the intended repository layout.
 
-Run scripts from the repository root unless the script itself documents another invocation pattern.
+They were not rerun during this structural cleanup. In particular, scripts that require `corpus/papers.csv` cannot currently complete because that canonical file is absent from the tracked tree. The missing corpus should be recovered and verified before those scripts are used.

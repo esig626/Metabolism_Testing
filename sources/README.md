@@ -1,11 +1,9 @@
 # Source material
 
-This directory contains raw source material used during the review. It is intentionally separate from extracted evidence, synthesis, and mathematical analysis.
+This directory is reserved for source documents that are not themselves search-audit records.
 
-- `raw/phase1/` contains the earlier database-search exports and associated metadata.
-- `raw/phase2/workstream_b/` contains the prospectively saved Workstream B search and primary-routing material. Its README is the original provenance note that previously occupied the repository root.
-- `raw/phase2/archives/` contains the preserved Phase 2 raw-search ZIP archive as uploaded.
-- `raw/phase3/` contains Phase 3 bibliographic exports, citation searches, XML and HTML full texts, retrieval-failure records, and related raw material.
-- `pdfs/phase3/` contains the tracked Phase 3 PDF sources.
+The currently tracked material is under `pdfs/phase3/` and contains Phase 3 primary or author-manuscript PDF sources that were previously stored at the repository root.
 
-Existing source files were moved without altering their blobs or filenames. The ZIP archive is retained as received and was not unpacked or independently checked during this structural pass.
+Raw database exports, search snapshots, citation captures, retrieval-failure artifacts, and verification records remain under `audit/` because the existing search logs and scripts explicitly reference those audit paths. This preserves the recorded workflow rather than rewriting provenance to fit a new directory convention.
+
+All moved source files retain their original Git blobs. No PDF contents were altered during this cleanup.

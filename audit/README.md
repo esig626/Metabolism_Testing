@@ -1,15 +1,16 @@
 # Audit trail
 
-This directory contains the provenance and decision records for the review. The ordering below reflects the sequence represented by the tracked files rather than a reconstructed narrative imposed after the fact.
+This directory preserves the review workflow at the paths recorded by the search logs and scripts. Existing audit files were moved here with their original Git blobs and were not rewritten during the structural cleanup.
 
-## Review order
+## Review sequence
 
-1. `pilot/` contains the initial pilot search, screening, and deduplication material.
-2. `phase2/` contains the main multi-workstream literature review, including workstream handoffs, search logs, screening tables, unresolved triage, deduplication, saturation, and progress records.
-3. `phase2a1/` contains the subsequent closure and foundational audit, including deferred records, scoped screening, corpus-row proposals, closure changes, and completion records.
-4. The Phase 2B evidence boundary is retained under `protocol/phase2b_evidence_boundary.md` because it changes the evidential scope of later work rather than merely recording an audit event.
-5. `phase3/` contains the direct prior-art search, screening, and progress records that support the later mathematical problem formulation.
+1. The pilot review is represented by `pilot_search_report.md`, `pilot_screening.csv`, `pilot_deduplication_log.md`, the cumulative `search_log.md`, and the preserved `raw_search_results/` captures.
+2. Phase 2 is represented by the `phase2_search_log*`, `phase2_screening*`, workstream handoffs, deduplication, unresolved-triage, saturation, and progress records. Raw Workstream B captures restored from the tracked files are under `phase2_raw_search_results/B/`.
+3. Phase 2A.1 is represented by the `phase2a1_*` screening, closure, deduplication, deferred-record, handoff, and completion files.
+4. Phase 3B is represented by `phase3_search_log.md`, `phase3_screening.csv`, `phase3_progress_report.md`, and `phase3_raw_search_results/`. The raw Phase 3 directory follows the A–E families recorded in the search log, with separate `citation_checks/` and `verification/` directories.
 
-The directory root contains review-wide records such as the decision log, cumulative search log, human-access requests, schema issues, and red-team protocol.
+Review-wide records include `decision_log.md`, `human_access_requests.md`, `schema_issues.md`, `red_team_protocol.md`, and `migration_report.md`.
 
-Files have been moved using their existing Git blobs. Their contents were not rewritten during this structural pass.
+`phase2_raw_search_results/phase2_raw_search_results.zip` is preserved exactly as uploaded. Its contents were not independently unpacked or reconciled during this structural pass. The visible Workstream B files are separately restored under the paths expected by the existing scripts.
+
+The next inventory pass should compare the tracked raw-search directories with that archive and identify any missing Phase 2 workstream captures rather than inferring them from filenames.

@@ -20,11 +20,11 @@ Case-specific protocol instantiations currently include multiple-myeloma and SDH
 - [`problem/`](problem/) defines the experimental pipeline, observation objects, metabolic classes, replication hierarchy, uncertainty structure, scientific decisions, source-information gaps, and candidate mathematical problems.
 - [`analyses/`](analyses/) contains literature-grounded methodological analyses and prior-art assessments.
 - [`synthesis/`](synthesis/) contains the cross-literature taxonomy, candidate-gap material, rejected novelty claims, and comparison documents.
-- [`audit/`](audit/) contains screening tables, search logs, decisions, deduplication records, handoffs, progress reports, red-team material, and other provenance records.
-- [`sources/`](sources/) contains raw bibliographic exports, retrieved primary-source material, PDFs, and preserved raw-search archives.
-- [`corpus/`](corpus/) is reserved for the canonical curated evidence tables.
+- [`audit/`](audit/) contains the search logs, screening ledgers, decisions, raw search captures, citation checks, verification artifacts, deduplication records, red-team material, and other provenance required by the review workflow.
+- [`sources/`](sources/) contains the separately retained source PDFs.
+- [`corpus/`](corpus/) is the canonical evidence-table location. The current `corpus/papers.csv` is missing from the tracked tree and is explicitly flagged for recovery rather than reconstructed by guesswork.
 - [`scripts/`](scripts/) contains the preserved review, migration, validation, and screening utilities.
-- [`archive/`](archive/) contains historical migration material and superseded corpus snapshots retained for provenance.
+- [`archive/`](archive/) contains historical migration snapshots and uploaded archive material retained for provenance.
 
 ## Suggested reading order
 
@@ -41,4 +41,4 @@ Case-specific protocol instantiations currently include multiple-myeloma and SDH
 
 Phase 3 has translated the preceding review into candidate mathematical problems. No candidate is presented here as a final theorem, a validated experimental model, or an established novelty claim.
 
-This structural cleanup reorganises existing tracked material without rewriting the underlying source, audit, analysis, or script files. It does not rerun the searches, execute the scripts, validate every external source, or establish that the tracked evidence collection is complete. A canonical current corpus table was not identifiable in the tracked tree during this pass. The evidence available for reconstructing one is described in [`corpus/README.md`](corpus/README.md).
+This cleanup reorganises existing tracked material around the paths already encoded in the project logs and scripts. Existing source, audit, analysis, synthesis, and script blobs were not rewritten. Searches and scripts were not rerun. The next step is an inventory audit of the remaining gaps, beginning with the missing canonical corpus and any Phase 2 raw-search captures that exist only inside the preserved archive.
