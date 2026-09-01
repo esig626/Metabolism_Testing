@@ -1,0 +1,43 @@
+name: Build README simulation assets
+
+on:
+  push:
+    branches:
+      - codex/readme-simulation-showcase
+    paths:
+      - 'assets/simulation-src/**'
+      - '.github/workflows/build-readme-simulation-assets.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/readme-simulation-showcase
+
+      - name: Reconstruct PNGs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/simulation
+          cat assets/simulation-src/mid_variability_by_metabolite.*.part | base64 --decode > assets/simulation/mid_variability_by_metabolite.png
+          cat assets/simulation-src/biological_flux_distributions.*.part | base64 --decode > assets/simulation/biological_flux_distributions.png
+          file assets/simulation/*.png
+          test "$(stat -c%s assets/simulation/mid_variability_by_metabolite.png)" -eq 7233
+          test "$(stat -c%s assets/simulation/biological_flux_distributions.png)" -eq 20061
+
+      - name: Commit PNGs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/simulation/*.png
+          git diff --cached --quiet && exit 0
+          git commit -m "Build README simulation showcase images"
+          git push origin HEAD:codex/readme-simulation-showcase
