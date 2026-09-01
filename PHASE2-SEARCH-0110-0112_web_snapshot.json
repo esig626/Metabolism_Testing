@@ -1,0 +1,215 @@
+{
+  "snapshot_type": "structured transcription of supplementary web-search results visible to the search tool; not a database-native export",
+  "execution_date": "2026-07-31",
+  "searches": [
+    {
+      "query_id": "PHASE2-SEARCH-0110",
+      "source": "supplementary web search",
+      "queries": [
+        "\"Liu Maini Baker 2026 model selection mechanism discrimination method\"",
+        "\"Liu Maini Baker 2026 experimental design model discrimination\"",
+        "site:arxiv.org Liu Maini Baker 2026 hypothesis testing model",
+        "site:biorxiv.org Liu Maini Baker 2026 model selection"
+      ],
+      "result_count": "not exposed by source",
+      "scholarly_records_visible": [
+        {
+          "title": "Parameter identifiability and model selection for partial differential equation models of cell invasion",
+          "authors": "Yue Liu; Kevin Suh; Philip K. Maini; Daniel J. Cohen; Ruth E. Baker",
+          "year": "2023",
+          "identifier": "arXiv:2309.01476",
+          "url": "https://arxiv.org/abs/2309.01476"
+        },
+        {
+          "title": "Establishment and Solution of a Multi-Stage Decision Model Based on Hypothesis Testing and Dynamic Programming Algorithm",
+          "authors": "Ziyang Liu; Yurui Hu; Yihan Deng",
+          "year": "2025",
+          "identifier": "arXiv:2503.05807",
+          "url": "https://arxiv.org/abs/2503.05807"
+        },
+        {
+          "title": "Control of diffusion-driven pattern formation behind a wave of competency",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2021",
+          "identifier": "arXiv:2110.07990",
+          "url": "https://arxiv.org/abs/2110.07990"
+        },
+        {
+          "title": "Pre-trained large language models as surrogates for zero-shot warmstarting of germplasm Bayesian optimization",
+          "authors": "not completely exposed",
+          "year": "2026",
+          "identifier": "10.64898/2026.06.28.735149",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.06.28.735149v1"
+        },
+        {
+          "title": "A General Theory of Hypothesis Tests and Confidence Regions for Sparse High Dimensional Models",
+          "authors": "Yang Ning; Han Liu",
+          "year": "2014",
+          "identifier": "arXiv:1412.8765",
+          "url": "https://arxiv.org/abs/1412.8765"
+        },
+        {
+          "title": "Adaptive Stimulus selection for multi-alternative psychometric functions with lapses",
+          "authors": "Ji Hyun Bak; Jonathan W. Pillow",
+          "year": "2017",
+          "identifier": "10.1101/260976",
+          "url": "https://www.biorxiv.org/content/10.1101/260976v1.full"
+        },
+        {
+          "title": "Rethinking Data Shapley for Data Selection Tasks: Misleads and Merits",
+          "authors": "not completely exposed",
+          "year": "2024",
+          "identifier": "arXiv:2405.03875",
+          "url": "https://arxiv.org/abs/2405.03875"
+        },
+        {
+          "title": "Offset Unlearning for Large Language Models",
+          "authors": "not completely exposed",
+          "year": "2024",
+          "identifier": "arXiv:2404.11045",
+          "url": "https://arxiv.org/abs/2404.11045"
+        },
+        {
+          "title": "Industrial Policy for Advanced AI",
+          "authors": "not completely exposed",
+          "year": "2023",
+          "identifier": "arXiv:2302.11436",
+          "url": "https://arxiv.org/abs/2302.11436"
+        },
+        {
+          "title": "Divide-and-Conquer Predictive Coding",
+          "authors": "not completely exposed",
+          "year": "2024",
+          "identifier": "arXiv:2408.05834",
+          "url": "https://arxiv.org/abs/2408.05834"
+        }
+      ],
+      "notes": "Index pages, author profiles and non-record navigation pages were not treated as discovered bibliographic records. The target Liu-Maini-Baker paper was not returned by this first query formulation."
+    },
+    {
+      "query_id": "PHASE2-SEARCH-0111",
+      "source": "supplementary web search",
+      "queries": [
+        "\"Optimal experiment design for practical parameter identifiability and model discrimination\"",
+        "\"Yue Liu\" \"Philip K. Maini\" \"Ruth E. Baker\" 2026",
+        "site:doi.org \"Optimal experiment design for practical parameter identifiability\"",
+        "site:academic.oup.com Yue Liu Maini Baker model discrimination"
+      ],
+      "result_count": "not exposed by source",
+      "scholarly_records_visible": [
+        {
+          "title": "Optimal experiment design for practical parameter identifiability and model discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2026",
+          "identifier": "10.1016/j.mbs.2026.109710",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0025556426001008"
+        },
+        {
+          "title": "Optimal experiment design for practical parameter identifiability and model discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2025",
+          "identifier": "arXiv:2506.11311",
+          "url": "https://arxiv.org/abs/2506.11311"
+        },
+        {
+          "title": "Optimal Experiment Design for Practical Parameter Identifiability and Model Discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2025",
+          "identifier": "10.2139/ssrn.5377217",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5377217"
+        },
+        {
+          "title": "Identifiability of large-scale non-linear dynamic network models applied to the ADM1-case study",
+          "authors": "not completely exposed",
+          "year": "2017",
+          "identifier": "PII:S0025556417300780",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0025556417300780"
+        },
+        {
+          "title": "Optimal design of stimulus experiments for robust discrimination of biochemical reaction networks",
+          "authors": "R. J. Flassig; K. Sundmacher",
+          "year": "2012",
+          "identifier": "10.1093/bioinformatics/bts585",
+          "url": "https://academic.oup.com/bioinformatics/article/28/23/3089/194080"
+        },
+        {
+          "title": "Optimal Input Design for Model Selection in Systems with Cell-to-Cell Variability",
+          "authors": "not completely exposed",
+          "year": "2025",
+          "identifier": "10.1007/978-3-032-01436-8_13",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-032-01436-8_13"
+        },
+        {
+          "title": "Rationalised experiment design for parameter estimation with sensitivity clustering",
+          "authors": "not completely exposed",
+          "year": "2024",
+          "identifier": "10.1038/s41598-024-75539-2",
+          "url": "https://doi.org/10.1038/s41598-024-75539-2"
+        },
+        {
+          "title": "A scalable method for parameter identification in kinetic models of metabolism using steady-state data",
+          "authors": "Shyam Srinivasan; William R. Cluett; Radhakrishnan Mahadevan",
+          "year": "2019",
+          "identifier": "10.1093/bioinformatics/btz445",
+          "url": "https://academic.oup.com/bioinformatics/article/35/24/5216/5514038"
+        },
+        {
+          "title": "A protocol for dynamic model calibration",
+          "authors": "not completely exposed",
+          "year": "2021",
+          "identifier": "10.1093/bib/bbab387",
+          "url": "https://academic.oup.com/bib/article-abstract/doi/10.1093/bib/bbab387/6383562"
+        }
+      ],
+      "notes": "The query located the target final article and two pre-publication manifestations. It also exposed the Flassig-Sundmacher robust biochemical model-discrimination method, which was subsequently verified from PMC."
+    },
+    {
+      "query_id": "PHASE2-SEARCH-0112",
+      "source": "supplementary web search",
+      "queries": [
+        "\"S0025556426001008\" DOI",
+        "\"Optimal experiment design for practical parameter identifiability and model discrimination\" DOI Mathematical Biosciences",
+        "site:doi.org/10.1016 \"Optimal experiment design for practical parameter identifiability\""
+      ],
+      "result_count": "not exposed by source",
+      "scholarly_records_visible": [
+        {
+          "title": "Optimal experiment design for practical parameter identifiability and model discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2026",
+          "identifier": "10.1016/j.mbs.2026.109710",
+          "url": "https://ora.ox.ac.uk/objects/uuid:1be2267b-8857-4e2b-bf16-5305ec9737b2"
+        },
+        {
+          "title": "Optimal experiment design for practical parameter identifiability and model discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2026",
+          "identifier": "10.1016/j.mbs.2026.109710",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0025556426001008"
+        },
+        {
+          "title": "Optimal Experiment Design for Practical Parameter Identifiability and Model Discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2025",
+          "identifier": "10.2139/ssrn.5377217",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5377217"
+        },
+        {
+          "title": "Optimal experiment design for practical parameter identifiability and model discrimination",
+          "authors": "Yue Liu; Philip K. Maini; Ruth E. Baker",
+          "year": "2025",
+          "identifier": "arXiv:2506.11311",
+          "url": "https://arxiv.org/abs/2506.11311"
+        },
+        {
+          "title": "Model discrimination via designed experiments: discriminating between the terminal and penultimate models on the basis of composition data",
+          "authors": "not completely exposed",
+          "year": "1993",
+          "identifier": "10.1021/ma00080a011",
+          "url": "https://pubs.acs.org/doi/10.1021/ma00080a011"
+        }
+      ],
+      "notes": "The final DOI and peer-reviewed status were verified against the publisher and Oxford institutional record. Multiple manifestations of the same work remain separate search-result occurrences and are deduplicated prospectively."
+    }
+  ]
+}

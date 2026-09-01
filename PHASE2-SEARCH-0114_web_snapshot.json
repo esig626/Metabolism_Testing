@@ -1,0 +1,35 @@
+{
+  "snapshot_type": "structured transcription of supplementary web-search results visible to the search tool; not a database-native export",
+  "execution_date": "2026-07-31",
+  "query_id": "PHASE2-SEARCH-0114",
+  "source": "supplementary web search",
+  "queries": [
+    "10.1093/bioinformatics/bts585 PubMed PMC",
+    "\"Optimal design of stimulus experiments for robust discrimination\" PMC"
+  ],
+  "result_count": "not exposed by source",
+  "scholarly_records_visible": [
+    {
+      "title": "Optimal design of stimulus experiments for robust discrimination of biochemical reaction networks",
+      "authors": "R. J. Flassig; K. Sundmacher",
+      "year": "2012",
+      "identifier": "10.1093/bioinformatics/bts585",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3516143/"
+    },
+    {
+      "title": "Robust Optimal Design of Experiments for Model Discrimination Using an Interactive Software Tool",
+      "authors": "Johannes Stegmaier; Dominik Skanda; Dirk Lebiedz",
+      "year": "2013",
+      "identifier": "10.1371/journal.pone.0055723",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3563641/"
+    },
+    {
+      "title": "Optimal experiment design for model selection in biochemical networks",
+      "authors": "Joep Vanlier; Christian A. Tiemann; Peter A. J. Hilbers; Natal A. W. van Riel",
+      "year": "2014",
+      "identifier": "10.1186/1752-0509-8-20",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946009/"
+    }
+  ],
+  "notes": "The exact-title routing search located three open primary articles. All three were subsequently inspected from PMC BioC full text. Other returned navigation pages were not bibliographic records."
+}
