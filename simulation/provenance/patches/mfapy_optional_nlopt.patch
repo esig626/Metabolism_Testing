@@ -1,0 +1,34 @@
+diff --git a/vendor/mfapy/mfapy/optimize.py b/vendor/mfapy/mfapy/optimize.py
+index 6f81091..b48359a 100644
+--- a/vendor/mfapy/mfapy/optimize.py
++++ b/vendor/mfapy/mfapy/optimize.py
+@@ -20,7 +20,10 @@ Todo:
+ 
+ import numpy as numpy
+ import scipy as scipy
+-import nlopt as nlopt
++try:
++    import nlopt as nlopt
++except ModuleNotFoundError:
++    nlopt = None
+ #from numba import jit
+ 
+ def initializing_Rm_fitting(numbers, vectors, matrixinv, template, initial_search_iteration_max, method = "fitting"):
+@@ -550,6 +553,12 @@ def fit_r_mdv_nlopt(configure, experiments, numbers, vectors, matrixinv, func, f
+ 
+     """
+ 
++    if nlopt is None:
++        raise ImportError(
++            "mfapy nlopt fitting requires the optional 'nlopt' package; "
++            "forward EMU calculation does not require it"
++        )
++
+     if isinstance(func, dict):
+         calmdv = func["calmdv"]
+         diffmdv = func["diffmdv"]
+@@ -999,4 +1008,3 @@ def calc_MDV_residue(x, *args, **kwargs):
+     return f + sum
+ 
+ 
+-

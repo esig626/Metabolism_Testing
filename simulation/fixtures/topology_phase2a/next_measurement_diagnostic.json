@@ -1,0 +1,47 @@
+{
+  "combined_componentwise_envelope": {
+    "W_M+0": [
+      0.25,
+      0.75
+    ],
+    "W_M+1": [
+      0.25,
+      0.75
+    ]
+  },
+  "comparison_threshold": 0.005,
+  "compatible_member_count": 13,
+  "compatible_supports": [
+    "G_A",
+    "G_C",
+    "G_AC"
+  ],
+  "diagnostic_scope": "single withheld metabolite; no panel optimization",
+  "generating_member_id": "emu_member_000000",
+  "generating_mid_inside_prediction_cloud": true,
+  "generating_support": "G_A",
+  "generating_true_withheld_mid": [
+    0.25,
+    0.75
+  ],
+  "maximum_cross_support_rms_difference": 0.5,
+  "potentially_helpful_to_measure_W": true,
+  "screen_status": "one-measurement-RMS centre-distance diagnostic; not a confidence set or the minimax oracle",
+  "screen_uses_only_observed_X_mid": true,
+  "support_pairs_with_different_predictions": [
+    [
+      "G_A",
+      "G_C"
+    ],
+    [
+      "G_A",
+      "G_AC"
+    ],
+    [
+      "G_C",
+      "G_AC"
+    ]
+  ],
+  "withheld_determination": "weak",
+  "withheld_mid_used_to_select_states": false
+}

@@ -1,0 +1,13 @@
+target_order,target_name,internal_target_id,direct_or_reporter,source_metabolite_or_mapping,internal_target_expression,carbon_count,atom_positions,provenance,notes
+0,Pyruvate,pyruvate,direct,pyr_c,Pyr_1:2:3,3,1:2:3,Example_2 Pyr pool and glycolysis maps,Full balanced pyruvate pool
+1,Alanine,alanine,reporter,pyr_c,Pyr_1:2:3,3,1:2:3,Example_2:r58 Pyr ABC -> Ala ABC,Observation-only; adds no flux
+2,Lactate,lactate,reporter,pyr_c,Pyr_1:2:3,3,1:2:3,Example_3:r41_ldh Pyr ABC -> Lac ABC,Observation-only carbon-skeleton reporter; not accumulated lactate
+3,Citrate,citrate,reporter,cit_c,AcCOA_2:1+Oxa_4:3:2:1,6,1:2:3:4:5:6,Example_3:r17_cs AB + CDEF -> FEDBAC,Instantaneous citrate-synthase production MID; not an isocitrate substitution
+4,aKG,akg,direct,akg_c,aKG_1:2:3:4:5,5,1:2:3:4:5,Example_2/3 aKG pool,Full balanced alpha-ketoglutarate pool
+5,Succinate,succinate,direct,succ_c,Suc_1:2:3:4,4,1:2:3:4,Example_2 r19-r21 with checked symmetry,Full balanced succinate pool
+6,Fumarate,fumarate,direct,fum_c,Fum_1:2:3:4,4,1:2:3:4,Example_2 r20-r23 with checked symmetry,Full balanced fumarate pool
+7,Malate,malate,direct,mal__L_c,Mal_1:2:3:4,4,1:2:3:4,Example_2 r22-r26,Full balanced malate pool
+8,Glutamine,glutamine,direct,gln__L_c,Gln_1:2:3:4:5,5,1:2:3:4:5,Example_7:r48_gls Glu ABCDE -> Gln ABCDE,Full balanced glutamine pool; not glutamate
+9,Aspartate,aspartate,reporter,oaa_c,Oxa_1:2:3:4,4,1:2:3:4,Example_2:r59 Oxa ABCD -> Asp ABCD,Observation-only; adds no flux
+10,Glycine,glycine,reporter,3pg_c,PGA_1:2,2,1:2,Example_2:r67+r68 PGA ABC -> Ser ABC -> Gly AB + MEETHF C,Observation-only two-carbon reporter; 3PG C3 is excluded
+11,Serine,serine,reporter,3pg_c,PGA_1:2:3,3,1:2:3,Example_2:r67 PGA ABC -> Ser ABC,Observation-only; adds no flux

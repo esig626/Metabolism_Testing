@@ -1,0 +1,28 @@
+{
+  "baseline_nontracer_configuration_sha256": "2a27d2e03b75e3183c1bb67d0c7e5956c3739e39d972e54a11dd8decce6659ee",
+  "baseline_tracer_fractions": {
+    "#000000": 0.5,
+    "#111111": 0.5
+  },
+  "changed_fields": [
+    {
+      "new": 0.3,
+      "old": 0.5,
+      "path": "tracers[0].isotopomer_fractions.#000000"
+    },
+    {
+      "new": 0.7,
+      "old": 0.5,
+      "path": "tracers[0].isotopomer_fractions.#111111"
+    }
+  ],
+  "correction": "no",
+  "nontracer_configuration_identical": true,
+  "only_expected_configuration_difference": true,
+  "revised_nontracer_configuration_sha256": "2a27d2e03b75e3183c1bb67d0c7e5956c3739e39d972e54a11dd8decce6659ee",
+  "revised_tracer_fractions": {
+    "#000000": 0.3,
+    "#111111": 0.7
+  },
+  "verdict": "PASS"
+}

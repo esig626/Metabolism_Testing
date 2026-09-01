@@ -1,0 +1,37 @@
+{
+  "cobra_model_constructed": false,
+  "condition0_state_array_sha256": "d92ce56682347e9fb27046c902106af534feab5a9c050b56a3bb0e05133c09ed",
+  "condition1_state_array_sha256": "1b4c39ff6c0504c442362f1f7ee28387980fb7ba5c035369bcac0e5f56c71cb5",
+  "fba_invoked": false,
+  "flux_states_regenerated": false,
+  "fva_invoked": false,
+  "immutable_worktree_diff_empty": true,
+  "required_source_file_sha256": {
+    "condition0_flux_states.csv": "f6181f249c327fdac51bd6dd481cd57a6f7a4940e50dab45027ca0fa3b78d062",
+    "condition1_flux_states.csv": "234d56ee47e8ea08da3854109f63710738948a3f5ebd9b3d54dff039731736ff",
+    "condition_mid_summary.csv": "efeed8ee02dc0b061c3589bd5e96405cd063c23f4921b65555423c3084a9e295",
+    "projected_flux_states.csv": "b48a679a91104a8dec87dca80bf613c38612a492e1dd299f36f7a22b53d9de82",
+    "reduced_isotope_flux_states.csv": "2837b2708dfbda30821d313fcc9ad6752ac0d633d89988b5859e50bd0f70ec39",
+    "reduced_isotope_transition_manifest.csv": "46e550da58a19f2c134444daa4d4f4fce61f427f05bdd4d8844ee56f1af61de9",
+    "run_audit.json": "15a10ea5abd246d7b0c2cf4507973f2716c90eee7d38ed8ec015937f5457dc28",
+    "state_level_noise_free_mids.csv": "72bac2b3adeab74b715f819394c458123851a0e46039f037d2ae0328485b3ccf",
+    "target_provenance.csv": "61bc212de3ef07e08f01e98ea88d5fc8022230a928c2c86d60321d63d9c21a9a"
+  },
+  "sampler_invoked": false,
+  "source_commit": "75ded3eb8d8dfc4e0cb0322d68ccb08cefc069c2",
+  "source_condition_summary_sha256": "efeed8ee02dc0b061c3589bd5e96405cd063c23f4921b65555423c3084a9e295",
+  "source_directory": "codex/results/hypothesis_testing/r1_ecoli_tca_no_frd7_forward",
+  "source_png_count": 24,
+  "source_raw_mid_sha256": "72bac2b3adeab74b715f819394c458123851a0e46039f037d2ae0328485b3ccf",
+  "source_svg_count": 0,
+  "source_tracer": {
+    "correction": "no",
+    "isotopomer_fractions": {
+      "#000000": 0.5,
+      "#111111": 0.5
+    },
+    "metabolite_id": "glc__D_e"
+  },
+  "source_tracked_file_count": 56,
+  "verdict": "PASS"
+}
