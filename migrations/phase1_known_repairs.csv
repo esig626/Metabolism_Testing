@@ -1,0 +1,8 @@
+record_id,field_corrected,previous_value,corrected_value,reason,repair_date,source_report,status
+P0005,guarantee_regime,other,heuristic;simulation_based,Historical one-column classification alignment correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL
+P0009,criterion_family,other,Fisher_information,Historical one-column classification alignment correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL
+P0018,converse_type,none,identifiability_obstruction,Historical misplaced converse correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL
+P0024,criterion_family,other,KL_optimality,Historical one-column classification alignment correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL
+P0026,criterion_family,other,Chernoff,Historical one-column classification alignment correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL
+P0027,criterion_family,other,Bayesian_discrimination;Chernoff,Historical one-column classification alignment correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL
+P0028,criterion_family,other,Chernoff,Historical one-column classification alignment correction documented by backup comparison; not a general migration rule.,2026-07-30,audit/migration_report.md,APPLIED_HISTORICAL

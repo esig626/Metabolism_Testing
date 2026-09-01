@@ -1,0 +1,146 @@
+# Phase 3B: hierarchical experimental-pipeline models
+
+## Answer to search family D
+
+The inspected literature contains detailed analytical uncertainty propagation,
+replicate-level isotope likelihoods, and ordinary sample-level differential
+analysis. It does not provide the complete hierarchy required by the Phase 3
+formulation: biological batch, culture, collected fraction, preparation,
+injection, fragment/MID and ion levels are not jointly represented as distinct
+sources of stochastic variation in a finite-sample metabolic-class test.
+
+## Closest isotope-specific uncertainty model
+
+### P3-0005 — Mairinger et al. (2018)
+
+**Classification: PARTIAL FORMULATION.** This is the closest inspected model
+of the analytical portion of the pipeline.
+
+The paper builds a Monte Carlo uncertainty budget from raw ion counts through
+peak integration, ionisation/transmission, isotope-interference correction
+and normalised isotope fractions, then evaluates downstream flux estimates.
+Table 1 specifies distributions for several analytical inputs; “Measurement
+uncertainty assessment using Monte Carlo simulation” describes 100,000
+propagations. “Contribution of biological variability” uses the dispersion of
+three biological replicates as an aggregate standard-uncertainty term and
+states that biological and other sources are difficult to isolate because
+they are not independent.
+
+This is valuable positive prior art for `ion -> corrected isotope fraction ->
+fitted flux` propagation. It does not identify separate variance components
+for culture, biological batch, preparation batch, injection and ion counting;
+does not define a primary class-testing unit; and gives no prospective class
+sample size or finite-sample error guarantee. Flux estimates from OpenFlux and
+their goodness-of-fit/confidence calculations remain downstream.
+
+Exact locations: Abstract and Introduction; Methods “Measurement uncertainty
+assessment using Monte Carlo simulation” and Table 1; the corrected-isotope-
+fraction example equation; Results “Contribution of biological variability”
+and the analytical-source contribution analysis; flux-estimation results and
+Discussion. DOI `10.1007/s00216-018-1017-7`; PMCID `PMC5937919`.
+
+## Replicate-level probabilistic model without pipeline hierarchy
+
+### P3-0002 — Zhang et al. (2023)
+
+**Classification: PARTIAL FORMULATION.** The likelihood treats log
+isotopomer-concentration vectors at time points as independent repeated
+samples and couples their mean through a nonlinear kinetic ODE. A shrinkage
+model borrows information across isotopomer variances, and group comparisons
+are made for kinetic parameters or derived fluxes.
+
+The paper therefore supplies a real replicate-level isotope likelihood. Its
+mathematical sample `j` is not resolved into culture, day/batch, extraction or
+injection lineage, and one diagonal residual level combines biological and
+technical variation. The source does not justify translating “independent
+repeated sample” into independent wells for either Phase 3 manuscript. Its
+credible intervals and “credible value” are Bayesian/simulation assessed; the
+Discussion says theoretical performance of the comparison measure remains to
+be investigated.
+
+Exact locations: Methods “A Bayesian kinetic model,” Equation 1 and the
+likelihood; the variance-shrinkage subsection; “Comparison of kinetic model
+parameters between experimental groups”; simulation studies; Discussion. DOI
+`10.1186/s12859-023-05211-5`; PMCID `PMC10035190`.
+
+## Direct sample-table workflows
+
+P3-0010 (DIMet) and P3-0011 (X13CMS) preserve sample rows and can compare
+replicated conditions directly. They do not model nested sampling levels.
+Triplicates in their example applications are reported experimental facts,
+not a license to infer separate days, batches or independent preparations.
+Their ordinary p-values also do not make isotopologues or metabolites into
+biological sampling units. Exact locations are listed in
+`analyses/phase3_direct_mid_prior_art.md` and evidence rows P3-0010–P3-0011.
+
+P3-0022 (MIAMI) and P3-0023 (IMPACT) extend the observed analytical workflow
+toward raw GC-MS or LC-MS features, isotope detection, MID construction and
+network contextualization. IMPACT explicitly stages peak picking,
+retention-time alignment, feature grouping/filling, isotope detection and MID
+calculation. Neither source assigns variance components to these stages or
+links uploaded sample rows to biological batch, culture, preparation and
+injection units. They therefore strengthen pipeline provenance, not the
+hierarchical probability model.
+
+## Adjacent power work that does not transfer
+
+### P3-0019 — Sieradzki et al. (2020)
+
+**Classification: ADJACENT BUT NONTRANSFERABLE.** The paper studies
+measurement error, replicated designs, power, sensitivity and specificity for
+quantitative stable-isotope probing (`qSIP`). Its primary object is taxon-level
+isotope incorporation inferred from DNA density-fractionation gradients, not
+metabolite/fragment MIDs generated by a metabolic-network atom map. Its
+fraction-number and abundance-dependent variance results are specific to that
+measurement process and cannot be imported as MID replicate requirements.
+
+Exact locations: Abstract; Methods “Density shifts,” “Sensitivity analysis,”
+“Sensitivity to number of fractions,” and “Power analysis”; Results
+“Replication, statistical power, and detection thresholds for H2 18O qSIP”;
+Discussion. DOI `10.1128/mSystems.00151-20`; PMCID `PMC7566279`.
+
+General metabolomics power papers located during screening were not retained
+as isotope-MID evidence. Their feature-abundance models likewise do not encode
+compositional MIDs, network coupling or the Phase 3 experimental lineage.
+
+## Pipeline-level comparison
+
+| Level required by Phase 3 | Closest checked prior treatment | Evidence status for a class-test model |
+|---|---|---|
+| biological batch/day | aggregate biological-replicate dispersion in P3-0005; unspecified repeated samples in P3-0002 | not separately identified |
+| culture/well | sample row in direct tools; tracer culture in integrated MFA | not modeled as a random level with declared independence |
+| sibling biological fraction | no checked prior gives the myeloma/chromaffin branching law | unresolved for the actual studies |
+| preparation/extraction batch | analytical contribution discussed in P3-0005 | no preparation-batch random effect or lineage |
+| repeated injection | some analytical papers report injections; P3-0021 reports analytical repeats | no general injection-level variance model |
+| fragment/MID | multiple fragments are jointly fitted or concatenated | dependence is either deterministic through flux or left empirical; not a biological replicate level |
+| isotopologue/ion | counting/integration uncertainty propagated in P3-0005 | ions/isotopologues are measurement coordinates, not independent cultures |
+| finite-sample class risk | generic represented-family tests in P3-0018/P0053 | isotope pipeline family and assumptions are not constructed |
+
+## Consequence for the two Phase 3A studies
+
+The manuscripts resolve media, tracers, 48-hour labeling, fraction
+collection, extraction/derivatisation, instruments, selected normalization
+steps and reported repetition. They still do not establish whether the
+biological repeats are separate wells, days or batches; preparation and run
+order; repeated-injection structure; variance at each lineage level; or
+replicate-level MID availability. These remain `UNKNOWN — NOT REPORTED` in
+`problem/source_information_gaps.md`.
+
+Accordingly:
+
+- the primary sampling unit cannot be declared from the papers alone;
+- a reported experimental repetition cannot be converted into an
+  independence assumption;
+- sibling fractions, fragments, isotopologues and ions cannot inflate the
+  biological sample size; and
+- a proof of concept may use a declared synthetic hierarchy, but its sample
+  size is illustrative rather than an estimate for either manuscript.
+
+## Family-D conclusion
+
+GAP-08A is **PARTIALLY ADDRESSED** at component level: analytical uncertainty
+propagation and single-level replicate likelihoods exist, but the complete
+culture-to-MID probability model was not verified. GAP-08E is **UNRESOLVED
+FROM CURRENT EVIDENCE** because no checked source both distinguishes the
+biological and technical sampling levels and carries those levels into a
+finite-sample class-testing guarantee.
