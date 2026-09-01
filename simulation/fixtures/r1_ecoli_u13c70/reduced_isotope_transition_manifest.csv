@@ -1,0 +1,58 @@
+execution_order,reaction_id,input_flux_id,stage_b2_scalar_component,stoichiometry,atom_map,mapping_type,provenance
+0,pts_glucose_component,pts_glucose_component,pts_glucose_component,SubsGlc-->G6P,ABCDEF-->ABCDEF,explicit_atom_transition,Example_2:r1
+1,pts_pep_component,pts_pep_component,pts_pep_component,PEP-->Pyr,ABC-->ABC,explicit_atom_transition,Example_2:r14
+2,pgi_forward,pgi_forward,pgi_forward,G6P-->F6P,ABCDEF-->ABCDEF,explicit_atom_transition,Example_2:r2
+3,pgi_reverse,pgi_reverse,pgi_reverse,F6P-->G6P,ABCDEF-->ABCDEF,explicit_atom_transition,Example_2:r3
+4,pfk_forward,pfk_forward,pfk_forward,F6P-->FBP,ABCDEF-->ABCDEF,explicit_atom_transition,Example_2:r4
+5,fbp_forward,fbp_forward,fbp_forward,FBP-->F6P,ABCDEF-->ABCDEF,explicit_atom_transition,Example_2:r5
+6,fba_forward,fba_forward,fba_forward,FBP-->DHAP+GAP,ABCDEF-->CBA+DEF,explicit_atom_transition,Example_2:r6
+7,tpi_forward,tpi_forward,tpi_forward,DHAP-->GAP,ABC-->ABC,explicit_atom_transition,Example_2:r8
+8,lower_glycolysis_gap_to_pga,lower_glycolysis_gap_to_pga,lower_glycolysis_gap_to_pga,GAP-->PGA,ABC-->ABC,source_backed_lump,Example_2:r10
+9,lower_glycolysis_pga_to_pep,lower_glycolysis_pga_to_pep,lower_glycolysis_pga_to_pep,PGA-->PEP,ABC-->ABC,source_backed_lump,Example_2:r12
+10,pyk_forward,pyk_forward,pyk_forward,PEP-->Pyr,ABC-->ABC,explicit_atom_transition,Example_2:r14
+11,pps_forward,pps_forward,pps_forward,Pyr-->PEP,ABC-->ABC,explicit_atom_transition,Example_2:r15
+12,pdh_forward,pdh_forward,pdh_forward,Pyr-->AcCOA+CO2,ABC-->BC+A,explicit_atom_transition,Example_2:r16
+13,tca_citrate_isocitrate,tca_citrate_isocitrate,tca_citrate_isocitrate,AcCOA+Oxa-->IsoCit,AB+CDEF-->FEDBAC,source_backed_lump,Example_2:r17; CS=ACONTa=ACONTb
+14,icdh_forward,icdh_forward,icdh_forward,IsoCit-->aKG+CO2,ABCDEF-->ABCDE+F,explicit_atom_transition,Example_2:r18
+15,akg_to_succinate,akg_to_succinate,akg_to_succinate,aKG-->Suc+CO2,ABCDE-->BCDE+A,source_backed_lump,Example_2:r19; AKGDH=-SUCOAS
+16,succinate_to_fumarate,succinate_to_fumarate,succinate_to_fumarate,Suc-->Fum,ABCD-->ABCD,explicit_atom_transition,Example_2:r20; checked Suc/Fum symmetry
+17,fumarate_to_succinate,fumarate_to_succinate,fumarate_to_succinate,Fum-->Suc,ABCD-->ABCD,explicit_atom_transition,Example_2:r21; checked Suc/Fum symmetry
+18,fumarate_to_malate,fumarate_to_malate,fumarate_to_malate,Fum-->Mal,ABCD-->ABCD,explicit_atom_transition,Example_2:r22; checked Fum symmetry
+19,malate_to_fumarate,malate_to_fumarate,malate_to_fumarate,Mal-->Fum,ABCD-->ABCD,explicit_atom_transition,Example_2:r23; checked Fum symmetry
+20,malate_to_oaa,malate_to_oaa,malate_to_oaa,Mal-->Oxa,ABCD-->ABCD,explicit_atom_transition,Example_2:r24
+21,oaa_to_malate,oaa_to_malate,oaa_to_malate,Oxa-->Mal,ABCD-->ABCD,explicit_atom_transition,Example_2:r25
+22,glyoxylate_bypass,glyoxylate_bypass,glyoxylate_bypass,IsoCit+AcCOA-->Mal+Suc,ABCDEF+GH-->ABHG+FCDE,source_backed_lump,Example_2:r26; ICL=MALS
+23,oxidative_ppp_net,oxidative_ppp_net,oxidative_ppp_net,G6P-->m6PG,ABCDEF-->ABCDEF,source_backed_lump,Example_2:r27; G6PDH2r=PGL
+24,gnd_forward,gnd_forward,gnd_forward,m6PG-->Ru5P+CO2,ABCDEF-->BCDEF+A,explicit_atom_transition,Example_2:r28
+25,rpi_ru5p_to_r5p,rpi_ru5p_to_r5p,rpi_ru5p_to_r5p,Ru5P-->R5P,ABCDE-->ABCDE,explicit_atom_transition,Example_2:r29
+26,rpe_forward,rpe_forward,rpe_forward,Ru5P-->Xu5P,ABCDE-->ABCDE,explicit_atom_transition,Example_2:r31
+27,rpe_reverse,rpe_reverse,rpe_reverse,Xu5P-->Ru5P,ABCDE-->ABCDE,explicit_atom_transition,Example_2:r32
+28,tkt1_forward,tkt1_forward,tkt1_forward,R5P+Xu5P-->S7P+GAP,ABCDE+FGHIJ-->FGABCDE+HIJ,explicit_atom_transition,Example_2:r33
+29,tkt1_reverse,tkt1_reverse,tkt1_reverse,GAP+S7P-->Xu5P+R5P,HIJ+FGABCDE-->FGHIJ+ABCDE,explicit_atom_transition,Example_2:r34
+30,tala_forward,tala_forward,tala_forward,GAP+S7P-->F6P+E4P,ABC+DEFGHIJ-->DEFABC+GHIJ,explicit_atom_transition,Example_2:r35
+31,tala_reverse,tala_reverse,tala_reverse,E4P+F6P-->S7P+GAP,GHIJ+DEFABC-->DEFGHIJ+ABC,explicit_atom_transition,Example_2:r36
+32,tkt2_forward,tkt2_forward,tkt2_forward,E4P+Xu5P-->F6P+GAP,ABCD+EFGHI-->EFABCD+GHI,explicit_atom_transition,Example_2:r37
+33,tkt2_reverse,tkt2_reverse,tkt2_reverse,GAP+F6P-->Xu5P+E4P,GHI+EFABCD-->EFGHI+ABCD,explicit_atom_transition,Example_2:r38
+34,ppc_forward,ppc_forward,ppc_forward,PEP+CO2-->Oxa,ABC+D-->ABCD,explicit_atom_transition,Example_2:r40
+35,ppck_forward,ppck_forward,ppck_forward,Oxa-->PEP+CO2,ABCD-->ABC+D,explicit_atom_transition,Example_2:r41
+36,me1_forward,me1_forward,me1_forward,Mal-->Pyr+CO2,ABCD-->ABC+D,explicit_atom_transition,Example_2:r42
+37,me2_forward,me2_forward,me2_forward,Mal-->Pyr+CO2,ABCD-->ABC+D,explicit_atom_transition,Example_2:r42
+38,acetate_overflow_net,acetate_overflow_net,acetate_overflow_net,AcCOA-->AcetateBoundary,AB-->AB,source_backed_lump,Example_2:r49; PTAr=-ACKr
+39,pfl_forward,pfl_forward,pfl_forward,Pyr-->AcCOA+FormateBoundary,ABC-->BC+A,explicit_atom_transition,Example_2:r51
+40,gln_to_glu,gln_to_glu,gln_to_glu,Gln-->Glu,ABCDE-->ABCDE,explicit_atom_transition,Example_3:r47_gls
+41,glu_to_gln,glu_to_gln,glu_to_gln,Glu-->Gln,ABCDE-->ABCDE,explicit_atom_transition,Example_7:r48_gls
+42,glu_to_akg,glu_to_akg,glu_to_akg,Glu-->aKG,ABCDE-->ABCDE,explicit_atom_transition,Example_3:r49_gludh
+43,akg_to_glu,akg_to_glu,akg_to_glu,aKG-->Glu,ABCDE-->ABCDE,explicit_atom_transition,Example_3:r50_gludh
+44,glusy_gln_component,glusy_gln_component,glusy_two_skeleton_production,Gln-->Glu,ABCDE-->ABCDE,explicit_shared_flux_decomposition,Example_3:r47_gls; shared v_GLUSy
+45,glusy_akg_component,glusy_akg_component,glusy_two_skeleton_production,aKG-->Glu,ABCDE-->ABCDE,explicit_shared_flux_decomposition,Example_3:r50_gludh; shared v_GLUSy
+46,biomass_akg_product,biomass_akg_product,biomass_akg_product,Glu-->aKG,ABCDE-->ABCDE,source_backed_biomass_decomposition,Stage B2 Orth et al. + Example_3:r49_gludh
+47,succinate_import_transport,succinate_import_transport,succinate_import_transport,SuccExt-->Suc,ABCD-->ABCD,explicit_atom_transition,Stage B2 strict identity-transport approval
+48,succinate_export_transport,succinate_export_transport,succinate_export_transport,Suc-->SuccExt,ABCD-->ABCD,explicit_atom_transition,Stage B2 strict identity-transport approval
+49,biomass_turnover,biomass_turnover,,{1.496}PGA+{3.7478}AcCOA+{0.361}E4P+{0.0709}F6P+{0.129}GAP+{0.205}G6P+{0.2557}Gln+{0.8232}Glu+{1.7867}Oxa+{0.5191}PEP+{2.8328}Pyr+{0.8977}R5P-->Discard,nd,turnover_only_no_product_atom_map,Stage B2 exact residual biomass precursor ledger
+50,acetaldehyde_export,acetaldehyde_export,,AcCOA-->Discard,nd,turnover_only_no_product_atom_map,ACALD reverse
+51,akg_export,akg_export,,aKG-->Discard,nd,turnover_only_no_product_atom_map,AKGt2r reverse
+52,glutamate_export,glutamate_export,,Glu-->Discard,nd,turnover_only_no_product_atom_map,GLUt2r reverse
+53,lactate_export,lactate_export,,Pyr-->Discard,nd,turnover_only_no_product_atom_map,LDH_D reverse; Lactate remains observation-only
+54,pyruvate_export,pyruvate_export,,Pyr-->Discard,nd,turnover_only_no_product_atom_map,PYRt2 reverse
+55,co2_export,co2_export,,CO2-->Discard,nd,turnover_only_no_product_atom_map,CO2t reverse
+56,succinate_secretion,succinate_secretion,,SuccExt-->Discard,nd,turnover_only_no_product_atom_map,EX_succ_e forward
